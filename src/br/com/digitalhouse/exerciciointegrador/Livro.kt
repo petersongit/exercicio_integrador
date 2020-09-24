@@ -1,5 +1,10 @@
 package br.com.digitalhouse.exerciciointegrador
 
-class Livro(codigo: Int, titulo: String, autor: String, anoLancamento: Int, qtdEsoque: Int, preco:Double) {
-    
-}
+data class Livro(
+        override var codigo: Int,
+        override var titulo: String,
+        override var preco: Double,
+        override var qtdEstoque: Int,
+        var autor: String,
+        var anoLancamento: Int
+) : Produto
