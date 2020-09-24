@@ -7,4 +7,9 @@ data class Livro(
         override var qtdEstoque: Int,
         var autor: String,
         var anoLancamento: Int
-) : Produto
+) : Produto {
+
+    override fun toString(): String {
+        return "Livro(codigo=$codigo, titulo='$titulo', preco=$preco, qtdEstoque=$qtdEstoque, autor='$autor', anoLancamento=$anoLancamento)"
+    }
+}

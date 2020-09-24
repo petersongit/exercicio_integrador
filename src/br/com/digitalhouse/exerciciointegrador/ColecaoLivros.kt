@@ -6,4 +6,9 @@ data class ColecaoLivros(
         override var preco: Double,
         override var qtdEstoque: Int,
         var listaLivros: MutableList<Livro>
-) : Produto
+) : Produto {
+
+    override fun toString(): String {
+        return "ColecaoLivros(codigo=$codigo, titulo='$titulo', preco=$preco, qtdEstoque=$qtdEstoque, listaLivros=$listaLivros)"
+    }
+}
