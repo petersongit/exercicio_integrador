@@ -36,9 +36,47 @@ class Biblioteca {
         return true
     }
 
-    fun consultarPorCodigo(codigoLivro: Int) {}
+    fun consultarPorCodigo(codigoLivro: Int) {
+        listaColecoes.forEach {
+            when (it.codigo) {
+                codigoLivro -> println(it)
+                else ->  print("Código $codigoLivro não encontrado na coleção")
+            }
+        }
 
-    fun efetuarVendaLivro(codigoLivro: Int) {}
+        listaLivros.forEach {
+            when (it.codigo) {
+                codigoLivro -> println(it)
+                else -> print("Código $codigoLivro não encontrado")
+            }
+        }
 
-    fun efetuarVendaColecao(codigoColecao: Int) {}
+    }
+
+
+
+    fun efetuarVendaLivro(codigoLivro: Int) {
+        listaLivros.forEach {
+            when  {
+                it.qtdEstoque >  0 -> {
+                    print("Venda do livro ${it.titulo} efetuada com sucesso")
+                    it.qtdEstoque--
+                }
+                else -> println("O livro ${it.titulo} não tem mais em nosso estoque")
+            }
+        }
+    }
+
+    fun efetuarVendaColecao(codigoColecao: Int) {
+        listaColecoes.forEach {
+            when  {
+                it.qtdEstoque >  0 -> {
+                    print("Venda do livro ${it.titulo} efetuada com sucesso")
+                    it.qtdEstoque--
+                }
+                else -> println("A coleção ${it.titulo} não tem mais em nosso estoque")
+            }
+        }
+    }
+
 }
