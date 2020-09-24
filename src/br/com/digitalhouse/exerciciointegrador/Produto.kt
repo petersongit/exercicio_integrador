@@ -4,4 +4,5 @@ interface Produto {
     var codigo: Int
     var titulo: String
     var preco: Double
+    var qtdEstoque: Int
 }
